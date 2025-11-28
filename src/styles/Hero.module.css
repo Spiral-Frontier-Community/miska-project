@@ -1,0 +1,150 @@
+.hero {
+  background: linear-gradient(135deg, #e3f2ff 0%, #fff 100%);
+  min-height: clamp(500px, 70vh, 700px);
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.heroContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: clamp(3rem, 5vw, 5rem) max(5%, calc((100% - 1400px) / 2));
+  gap: clamp(2rem, 5vw, 5rem);
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.heroContent {
+  flex: 1 1 500px;
+  min-width: 300px;
+  animation: fadeInLeft 1s ease-out;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.heroSubtitle {
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.ctaButton {
+  padding: clamp(0.8rem, 2vw, 1rem) clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.ctaButton:hover {
+  background-color: #0056d2;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+.ctaButton:active {
+  transform: translateY(-1px);
+}
+
+.heroVisual {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 300px;
+  animation: fadeInRight 1s ease-out;
+}
+
+.productPreview {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productImage {
+  max-width: 100%;
+  height: auto;
+  max-height: min(400px, 50vh);
+  object-fit: contain;
+  /* This drop-shadow works perfectly with transparent PNG backgrounds! */
+  filter: drop-shadow(0 10px 30px rgba(0, 123, 255, 0.3));
+  transition: all 0.3s ease;
+  animation: floatAnimation 3s ease-in-out infinite;
+}
+
+.productImage:hover {
+  filter: drop-shadow(0 15px 40px rgba(0, 123, 255, 0.4));
+  transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .heroContainer {
+    padding: 3rem 4%;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroContainer {
+    flex-direction: column;
+    padding: 2rem 4%;
+    text-align: center;
+  }
+
+  .heroContent {
+    max-width: 100%;
+  }
+
+  .productImage {
+    max-height: 300px;
+  }
+}
