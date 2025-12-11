@@ -13,22 +13,51 @@ const KnowledgeSection = () => {
          id: 1,
          title: 'การทำความสะอาดที่ถูกวิธี',
          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-         icon: '🧼'
+         imageSrc: '🧼',
+         date: '2024-12-15' // ← ADD THIS
       },
       {
          id: 2,
          title: 'เคล็ดลับการฆ่าเชื้อโรค',
          description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-         icon: '🦠'
+         imageSrc: '🦠',
+         date: '2024-12-14' // ← ADD THIS
       },
       {
          id: 3,
          title: 'ผลิตภัณฑ์ที่ปลอดภัย',
          description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-         icon: '✨'
+         imageSrc: '✨',
+         date: '2024-12-13' // ← ADD THIS
       }
    ];
 
+   // ← ADD THIS: Sort by date (newest first)
+   const sortedItems = [...knowledgeItems].sort((a, b) =>
+      new Date(b.date) - new Date(a.date)
+   ).slice(0, 3);
+
+   // ← ADD AUTO-SCROLL
+   React.useEffect(() => {
+      const scrollContainer = document.querySelector(`.${styles.knowledgeGrid}`);
+      if (!scrollContainer) return;
+
+      let scrollInterval = setInterval(() => {
+         const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+         const currentScroll = scrollContainer.scrollLeft;
+
+         if (currentScroll >= maxScroll) {
+            // If at end, scroll back to start
+            scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+         } else {
+            // Scroll by one card width
+            scrollContainer.scrollBy({ left: 340, behavior: 'smooth' }); // 320px card + 20px gap
+         }
+      }, 3000); // Auto-scroll every 3 seconds
+
+      return () => clearInterval(scrollInterval);
+   }, []);
+   
    return (
       <section className={styles.knowledgeSection}>
          <div className={styles.container}>
@@ -40,10 +69,11 @@ const KnowledgeSection = () => {
             </div>
 
             <div className={styles.knowledgeGrid}>
-               {knowledgeItems.map(item => (
+               {sortedItems.map(item => (
                   <div key={item.id} className={styles.knowledgeCard}>
-                     <div className={styles.iconContainer}>
-                        <span className={styles.icon}>{item.icon}</span>
+                     <div className={styles.dateTag}>{item.date}</div> {/* ← ADD THIS */}
+                     <div className={styles.imageSrcContainer}>
+                        <span className={styles.imageSrc}>{item.imageSrc}</span>
                      </div>
                      <h3 className={styles.cardTitle}>{item.title}</h3>
                      <p className={styles.cardDescription}>{item.description}</p>
