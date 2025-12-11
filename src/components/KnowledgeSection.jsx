@@ -28,14 +28,28 @@ const KnowledgeSection = () => {
          title: 'ผลิตภัณฑ์ที่ปลอดภัย',
          description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
          imageSrc: '✨',
-         date: '2024-12-13' // ← ADD THIS
+         date: '2024-12-13'
+      },
+      {
+         id: 4,
+         title: 'เคล็ดลับการแพทย์โรค',
+         description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+         imageSrc: '✨',
+         date: '2024-12-12'
+      },
+      {
+         id: 5,
+         title: 'การตรวจสอบโรค',
+         description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+         imageSrc: '✨',
+         date: '2024-12-14'
       }
    ];
-
+   
    // ← ADD THIS: Sort by date (newest first)
    const sortedItems = [...knowledgeItems].sort((a, b) =>
       new Date(b.date) - new Date(a.date)
-   ).slice(0, 3);
+   ).slice(0, knowledgeItems.length);
 
    // ← ADD AUTO-SCROLL
    React.useEffect(() => {
@@ -57,7 +71,7 @@ const KnowledgeSection = () => {
 
       return () => clearInterval(scrollInterval);
    }, []);
-   
+
    return (
       <section className={styles.knowledgeSection}>
          <div className={styles.container}>
