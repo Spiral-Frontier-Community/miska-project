@@ -1,43 +1,117 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../styles/Hero.module.css';
 
-const Hero = ({ onCTAClick }) => {
+const HeroCarousel = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Slide data - easy to update!
+  const slides = [
+    {
+      id: 1,
+      image: '/images/background/background_long_1.jpg', 
+      text: 'เคยเป็นไหม... แค่อยาก สระผม ให้สดชื่น แต่ ทำไม่ได้จริงๆ'
+    },
+    {
+      id: 2,
+      image: '/images/background/background_long_2.jpg',
+      text: 'ระหว่างฟักฟื้น... แค่อะ สระผม ก็ ลำบาก'
+    },
+    {
+      id: 3,
+      image: '/images/background/background_long_3.jpg',
+      text: 'หลังศัลยกรรม... แผลห้ามโดนน้ำ จะ สระผม ก็ ลำบาก'
+    },
+    {
+      id: 4,
+      image: '/images/background/background_long_4.jpg',
+      text: 'HOW TO USE - วิธีใช้งาน Miska Dry Shampoo'
+    },
+    {
+      id: 5,
+      image: '/images/background/background_long_5.jpg',
+      text: 'รู้หรือไม่? แบคทีเรียและเชื้อรามีสะสมบนหนังศีระ'
+    }
+  ];
+
+  // Auto-play slider
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
+
   return (
-    <section className={styles.hero}>
-      <div className={styles.heroContainer}>
-        <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>
-            นวัตกรรมความสะอาด<br/>
-            มาตรฐานการแพทย์
-          </h1>
-          <p className={styles.heroSubtitle}>
-            ยกระดับคุณภาพชีวิต ด้วยเทคโนโลจีระดับโลก
-          </p>
-          <button 
-            className={styles.ctaButton}
-            onClick={onCTAClick}
+    <div className={styles.carouselContainer}>
+      {/* Slides */}
+      <div className={styles.slidesWrapper}>
+        {slides.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={`${styles.slide} ${index === currentSlide ? styles.active : ''}`}
+            style={{
+              backgroundImage: `url(${slide.image})`,
+              display: index === currentSlide ? 'block' : 'none'
+            }}
           >
-            ดูผลิตภัณฑ์
-          </button>
-        </div>
-        
-        <div className={styles.heroVisual}>
-          <div className={styles.productPreview}>
-            {/* Replace this with actual product image */}
-            {/* Example: <img src="/images/miska-product-hero.png" alt="Miska Product" className={styles.productImage} /> */}
-            <img 
-              // src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='400' viewBox='0 0 300 400'%3E%3Crect fill='%23007bff' opacity='0.1' width='300' height='400' rx='20'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='%23007bff' font-size='24' font-weight='bold'%3EMISKA%3C/text%3E%3Ctext x='50%25' y='60%25' text-anchor='middle' fill='%23666' font-size='14'%3EProduct Image%3C/text%3E%3C/svg%3E"
-              src="/images/products/miska_product2.png"
-              width="800"
-              height="600"
-              alt="Miska Product Placeholder"
-              className={styles.productImage}
-            />
+            {/* Overlay gradient for better text visibility */}
+            <div className={styles.overlay}></div>
           </div>
+        ))}
+      </div>
+
+      {/* Previous Button */}
+      <button
+        className={`${styles.navButton} ${styles.prevButton}`}
+        onClick={prevSlide}
+        aria-label="Previous slide"
+      >
+        ‹
+      </button>
+
+      {/* Next Button */}
+      <button
+        className={`${styles.navButton} ${styles.nextButton}`}
+        onClick={nextSlide}
+        aria-label="Next slide"
+      >
+        ›
+      </button>
+
+      {/* Bottom Overlay with Text and Dots */}
+      <div className={styles.bottomOverlay}>
+        {/* Text Description */}
+        <div className={styles.slideText}>
+          <p>{slides[currentSlide].text}</p>
+        </div>
+
+        {/* Pagination Dots */}
+        <div className={styles.pagination}>
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              className={`${styles.dot} ${index === currentSlide ? styles.activeDot : ''}`}
+              onClick={() => goToSlide(index)}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
-export default Hero;
+export default HeroCarousel;

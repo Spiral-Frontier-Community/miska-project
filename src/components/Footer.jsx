@@ -5,13 +5,25 @@ const Footer = () => {
    const currentYear = new Date().getFullYear();
 
    const socialLinks = [
-      { name: 'LINE', url: 'https://lin.ee/0NA2V1e', icon: '💬' },
-      { name: 'Facebook', url: 'https://www.facebook.com/MiskaThailand', icon: '📘' },
-      { name: 'Instagram', url: 'https://www.instagram.com/miska_thailand', icon: '📸' }
+      {
+         name: 'LINE',
+         url: 'https://lin.ee/0NA2V1e',
+         icon: <img src="/logo/line_black_icon.png" alt="LINE" />
+      },
+      {
+         name: 'Facebook',
+         url: 'https://www.facebook.com/MiskaThailand',
+         icon: <img src="/logo/fb_black_icon.png" alt="Facebook" />
+      },
+      {
+         name: 'Instagram',
+         url: 'https://www.instagram.com/miska_thailand',
+         icon: <img src="/logo/ig_black_icon.png" alt="Instagram" />
+      }
    ];
 
    return (
-      <footer className={styles.footer}>
+      <footer id="footer" className={styles.footer}>
          <div className={styles.container}>
             {/* Company Info */}
             <div className={styles.section}>
@@ -52,6 +64,18 @@ const Footer = () => {
                         {social.name}
                      </a>
                   ))}
+               </div>
+            </div>
+
+            {/* QR Code */}
+            <div className={styles.section}>
+               <div className={styles.qrSection}>
+                  <img
+                     src="/images/socialQR/Line_QRcode.png"
+                     alt="LINE QR Code"
+                     className={styles.qrImage}
+                  />
+                  <p className={styles.qrLabel}>สแกนเพื่อเพิ่มเพื่อนใน LINE</p>
                </div>
             </div>
          </div>

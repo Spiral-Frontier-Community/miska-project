@@ -5,30 +5,49 @@ const Header = ({ onNavigate, currentSection }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: 'home', label: 'หน้าหลัก' },
-    { id: 'about', label: 'เกี่ยวกับเรา' },
-    { id: 'products', label: 'ผลิตภัณฑ์' },
-    { id: 'contact', label: 'ติดต่อ' }
+    { id: 'home', label: 'หน้าหลัก', scrollTo: null },
+    { id: 'about', label: 'เกี่ยวกับเรา', scrollTo: 'footer' }, // Scroll to footer
+    { id: 'products', label: 'ผลิตภัณฑ์', scrollTo: 'products' }, // Scroll to products
+    { id: 'contact', label: 'ติดต่อ', scrollTo: 'footer' } // Scroll to footer
   ];
 
-  const handleNavClick = (sectionId) => {
-    onNavigate(sectionId);
+  const handleNavClick = (item) => {
     setMobileMenuOpen(false);
+
+    // If it has a scroll target, scroll to that element
+    if (item.scrollTo) {
+      const element = document.getElementById(item.scrollTo);
+      if (element) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    } else {
+      // Otherwise use the regular navigation
+      onNavigate(item.id);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
+        {/* Logo Image - Replace text with image */}
         <div className={styles.logoContainer}>
-          <span className={styles.logo}>MISKA</span>
+          <img
+            src="/images/Logo/logo_1.png"
+            alt="MISKA Logo"
+            className={styles.logoImage}
+          />
         </div>
-        
+
         {/* Desktop Navigation */}
         <nav className={styles.desktopNav}>
           {navItems.map(item => (
             <button
               key={item.id}
-              onClick={() => handleNavClick(item.id)}
+              onClick={() => handleNavClick(item)}
               className={`${styles.navBtn} ${currentSection === item.id ? styles.active : ''}`}
             >
               {item.label}
@@ -37,7 +56,7 @@ const Header = ({ onNavigate, currentSection }) => {
         </nav>
 
         {/* Mobile Menu Toggle */}
-        <button 
+        <button
           className={styles.mobileMenuToggle}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
@@ -54,7 +73,7 @@ const Header = ({ onNavigate, currentSection }) => {
           {navItems.map(item => (
             <button
               key={item.id}
-              onClick={() => handleNavClick(item.id)}
+              onClick={() => handleNavClick(item)}
               className={`${styles.mobileNavBtn} ${currentSection === item.id ? styles.active : ''}`}
             >
               {item.label}

@@ -2,17 +2,21 @@
   width: 100%;
 }
 
-/* Products Section */
-.productsSection {
+/* Single Product Section - 80% Width, Fullscreen Feel */
+.singleProductSection {
   padding: clamp(3rem, 8vw, 6rem) 0;
   background-color: #fff;
   width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
 }
 
-.productsContainer {
+.singleProductContainer {
   padding: 0 max(5%, calc((100% - 1400px) / 2));
   max-width: 1400px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .sectionHeader {
@@ -36,14 +40,14 @@
   line-height: 1.6;
 }
 
-.productGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
-  gap: clamp(1.5rem, 3vw, 2.5rem);
-  width: 100%;
+/* Single Product Wrapper - 80% Width */
+.singleProductWrapper {
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-/* Vision & Mission Section */
+/* Vision & Mission Section - Side by Side, NO ICONS */
 .visionSection {
   padding: clamp(3rem, 8vw, 6rem) 0;
   background: linear-gradient(135deg, #e3f2ff 0%, #f8fbff 100%);
@@ -52,7 +56,8 @@
 
 .visionContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 450px), 1fr));
+  grid-template-columns: repeat(2, 1fr);
+  /* FORCED 2 COLUMNS */
   gap: clamp(2rem, 4vw, 3rem);
   padding: 0 max(5%, calc((100% - 1400px) / 2));
   max-width: 1400px;
@@ -72,10 +77,7 @@
   box-shadow: 0 8px 30px rgba(0, 123, 255, 0.15);
 }
 
-.visionIcon {
-  font-size: clamp(3rem, 6vw, 4rem);
-  margin-bottom: 1.5rem;
-}
+/* NO ICON - Removed */
 
 .visionTitle {
   font-size: clamp(1.5rem, 3vw, 2rem);
@@ -116,18 +118,28 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .productsContainer,
+
+  .singleProductContainer,
   .visionContainer {
     padding: 0 4%;
+  }
+
+  .singleProductWrapper {
+    width: 90%;
   }
 }
 
 @media (max-width: 768px) {
-  .productGrid {
-    grid-template-columns: 1fr;
+  .singleProductWrapper {
+    width: 100%;
   }
 
   .visionContainer {
     grid-template-columns: 1fr;
+    /* Stack on mobile */
+  }
+
+  .singleProductSection {
+    min-height: auto;
   }
 }

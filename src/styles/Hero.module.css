@@ -1,150 +1,213 @@
-.hero {
-  background: linear-gradient(135deg, #e3f2ff 0%, #fff 100%);
-  min-height: clamp(500px, 70vh, 700px);
-  display: flex;
-  align-items: center;
+.carouselContainer {
+  position: relative;
   width: 100%;
+  height: 90vh; /* Full screen height */
+  overflow: hidden;
 }
 
-.heroContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: clamp(3rem, 5vw, 5rem) max(5%, calc((100% - 1400px) / 2));
-  gap: clamp(2rem, 5vw, 5rem);
-  max-width: 1400px;
-  margin: 0 auto;
+.slidesWrapper {
   width: 100%;
-  flex-wrap: wrap;
+  height: 100%;
+  position: relative;
 }
 
-.heroContent {
-  flex: 1 1 500px;
-  min-width: 300px;
-  animation: fadeInLeft 1s ease-out;
+.slide {
+  width: 100%;
+  height: 100%;
+  /* Use contain so images are not cropped. Letterboxing may appear but image will be fully visible. */
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #000; /* fallback/background for letterboxing */
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
-.heroTitle {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: bold;
-  color: #007bff;
-  margin-bottom: 1rem;
-  line-height: 1.2;
+.slide.active {
+  opacity: 1;
+  z-index: 1;
 }
 
-.heroSubtitle {
-  font-size: clamp(1rem, 2.5vw, 1.5rem);
-  color: #555;
-  margin-bottom: 2rem;
-  line-height: 1.6;
+/* Dark overlay gradient for text readability */
+.overlay {
+  position: absolute;
+  bottom: 0;
+  top: 70%;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  z-index: 5; /* ← CHANGE from 1 to 5 */
 }
 
-.ctaButton {
-  padding: clamp(0.8rem, 2vw, 1rem) clamp(2rem, 4vw, 3rem);
-  font-size: clamp(1rem, 2vw, 1.2rem);
-  background-color: #007bff;
+/* Navigation Arrows */
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.3);
   color: #fff;
   border: none;
-  border-radius: 50px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  width: clamp(50px, 8vw, 70px);
+  height: clamp(50px, 8vw, 70px);
+  border-radius: 50%;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+  z-index: 10;
   transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1; 
+  padding: 0;
+}
+
+.navButton:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prevButton {
+  left: clamp(1rem, 3vw, 2rem);
+}
+
+.nextButton {
+  right: clamp(1rem, 3vw, 2rem);
+}
+
+/* Bottom Overlay Container */
+.bottomOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 5vw, 4rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  z-index: 15;
+}
+
+/* Slide Text */
+.slideText {
+  flex: 1;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.slideText p {
+  font-size: clamp(1.2rem, 3vw, 2rem);
   font-weight: 600;
+  line-height: 1.4;
+  margin: 0;
+  max-width: 800px;
 }
 
-.ctaButton:hover {
-  background-color: #0056d2;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
-}
-
-.ctaButton:active {
-  transform: translateY(-1px);
-}
-
-.heroVisual {
-  flex: 1 1 400px;
+/* Pagination Dots */
+.pagination {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  gap: 0.75rem;
   align-items: center;
-  min-width: 300px;
-  animation: fadeInRight 1s ease-out;
+  z-index: 20;
 }
 
-.productPreview {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.productImage {
-  max-width: 100%;
-  height: auto;
-  max-height: min(400px, 50vh);
-  object-fit: contain;
-  /* This drop-shadow works perfectly with transparent PNG backgrounds! */
-  filter: drop-shadow(0 10px 30px rgba(0, 123, 255, 0.3));
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  cursor: pointer;
   transition: all 0.3s ease;
-  animation: floatAnimation 3s ease-in-out infinite;
+  padding: 0;
 }
 
-.productImage:hover {
-  filter: drop-shadow(0 15px 40px rgba(0, 123, 255, 0.4));
+.dot:hover {
+  background-color: rgba(255, 255, 255, 0.8);
   transform: scale(1.2);
 }
 
-/* Animations */
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes floatAnimation {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
+.dot.activeDot {
+  background-color: #fff;
+  width: 14px;
+  height: 14px;
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-  .heroContainer {
-    padding: 3rem 4%;
+  .carouselContainer {
+    height: 80vh;
+  }
+
+  .slideText p {
+    max-width: 600px;
+  }
+
+  .bottomOverlay {
+    padding: 1.5rem 2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .heroContainer {
-    flex-direction: column;
-    padding: 2rem 4%;
-    text-align: center;
+  .carouselContainer {
+    height: 70vh;
   }
 
-  .heroContent {
+  .bottomOverlay {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+  }
+
+  .slideText p {
+    font-size: 1rem;
     max-width: 100%;
   }
 
-  .productImage {
-    max-height: 300px;
+  .pagination {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .navButton {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .prevButton {
+    left: 0.5rem;
+  }
+
+  .nextButton {
+    right: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carouselContainer {
+    height: 60vh;
+  }
+
+  .slideText p {
+    font-size: 0.9rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .dot.activeDot {
+    width: 12px;
+    height: 12px;
   }
 }

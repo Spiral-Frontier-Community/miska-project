@@ -20,12 +20,12 @@ const ProductCard = ({ product, clickCount, onProductClick }) => {
 
          <div className={styles.content}>
             <h3 className={styles.productName}>{product.name}</h3>
-            <p className={styles.productDesc}>{product.desc}</p>
+            {/* <p className={styles.productDesc}>{product.desc}</p> */}
 
             <div className={styles.footer}>
-               <span className={styles.clickCount}>
+               {/* <span className={styles.clickCount}>
                   👆 Clicks: {clickCount || 0}
-               </span>
+               </span> */}
                <button className={styles.learnMore}>
                   เรียนรู้เพิ่มเติม →
                </button>
