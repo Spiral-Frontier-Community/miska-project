@@ -69,14 +69,30 @@
    width: 100%;
    overflow-x: auto;
    scroll-behavior: smooth;
-   padding-bottom: 1rem;
-   scrollbar-width: none;
-   -ms-overflow-style: none;
+   padding-bottom: 1.5rem; /* give space for the scrollbar */
+   /* show a thin scrollbar in Firefox */
+   scrollbar-width: thin;
+   /* thumb color then track color */
+   scrollbar-color: rgba(0,123,255,0.65) rgba(0,0,0,0.04);
+   /* fallback for older IE/Edge */
+   -ms-overflow-style: auto;
 }
 
+/* WebKit (Chrome, Safari) horizontal scrollbar styling */
 .knowledgeGrid::-webkit-scrollbar {
-   display: none;
-   /* Chrome/Safari */
+   height: 12px;
+}
+.knowledgeGrid::-webkit-scrollbar-track {
+   background: transparent;
+   border-radius: 999px;
+}
+.knowledgeGrid::-webkit-scrollbar-thumb {
+   background: linear-gradient(90deg, #007bff, #0056d2);
+   border-radius: 999px;
+   min-width: 44px; /* make thumb easy to grab */
+}
+.knowledgeGrid::-webkit-scrollbar-thumb:hover {
+   filter: brightness(0.9);
 }
 
 .knowledgeCard {
