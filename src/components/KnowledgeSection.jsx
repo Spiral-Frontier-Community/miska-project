@@ -42,7 +42,21 @@ const KnowledgeSection = () => {
          title: 'Lorem',
          description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
          imageSrc: 'https://placehold.co/500x300',
+         date: '2024-12-15'
+      },
+      {
+         id: 6,
+         title: 'Lorem',
+         description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+         imageSrc: 'https://placehold.co/500x300',
          date: '2024-12-14'
+      },
+      {
+         id: 7,
+         title: 'Lorem',
+         description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+         imageSrc: 'https://placehold.co/500x300',
+         date: '2024-12-24'
       }
    ];
    
@@ -61,13 +75,11 @@ const KnowledgeSection = () => {
          const currentScroll = scrollContainer.scrollLeft;
 
          if (currentScroll >= maxScroll) {
-            // If at end, scroll back to start
             scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
          } else {
-            // Scroll by one card width
-            scrollContainer.scrollBy({ left: 340, behavior: 'smooth' }); // 320px card + 20px gap
+            scrollContainer.scrollBy({ left: 340, behavior: 'smooth' });
          }
-      }, 3000); // Auto-scroll every 3 seconds
+      }, 3000);
 
       return () => clearInterval(scrollInterval);
    }, []);
@@ -81,7 +93,9 @@ const KnowledgeSection = () => {
                   เคล็ดลับและความรู้เกี่ยวกับความสะอาดและสุขภาพ
                </p>
             </div>
+         </div>
 
+         <div className={styles.gridContainer}>
             <div className={styles.knowledgeGrid}>
                {sortedItems.map(item => (
                   <div key={item.id} className={styles.knowledgeCard}>

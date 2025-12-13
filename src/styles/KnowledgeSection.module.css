@@ -60,21 +60,15 @@
 
 .knowledgeGrid {
    display: grid;
-   /* ← CHANGE back to grid */
    grid-auto-flow: column;
-   /* ← ADD - makes items flow horizontally */
    grid-auto-columns: minmax(320px, 1fr);
-   /* ← ADD - card size */
    gap: clamp(1.5rem, 3vw, 2rem);
    width: 100%;
    overflow-x: auto;
    scroll-behavior: smooth;
-   padding-bottom: 1.5rem; /* give space for the scrollbar */
-   /* show a thin scrollbar in Firefox */
+   padding-bottom: 1.5rem;
    scrollbar-width: thin;
-   /* thumb color then track color */
    scrollbar-color: rgba(0,123,255,0.65) rgba(0,0,0,0.04);
-   /* fallback for older IE/Edge */
    -ms-overflow-style: auto;
 }
 
@@ -89,10 +83,41 @@
 .knowledgeGrid::-webkit-scrollbar-thumb {
    background: linear-gradient(90deg, #007bff, #0056d2);
    border-radius: 999px;
-   min-width: 44px; /* make thumb easy to grab */
+   min-width: 44px;
 }
 .knowledgeGrid::-webkit-scrollbar-thumb:hover {
    filter: brightness(0.9);
+}
+
+.gridContainer {
+   position: relative;
+   width: 100%;
+}
+
+.gridContainer::before {
+   content: '';
+   position: absolute;
+   left: 0;
+   top: 0;
+   bottom: 0;
+   width: 100px;
+   background: linear-gradient(to right, rgba(248, 251, 255, 0.9), transparent);
+   backdrop-filter: blur(5px);
+   z-index: 2;
+   pointer-events: none;
+}
+
+.gridContainer::after {
+   content: '';
+   position: absolute;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   width: 100px;
+   background: linear-gradient(to left, rgba(227, 242, 255, 0.9), transparent);
+   backdrop-filter: blur(5px);
+   z-index: 2;
+   pointer-events: none;
 }
 
 .knowledgeCard {
@@ -171,7 +196,7 @@
 
 @media (max-width: 768px) {
    .knowledgeGrid {
-      grid-auto-columns: minmax(280px, 1fr); /* ← Smaller cards on mobile */
+      grid-auto-columns: minmax(280px, 1fr);
       gap: 1rem;
    }
 
@@ -179,8 +204,8 @@
       min-height: 300px;
    }
 
-   .container::before,
-   .container::after {
+   .gridContainer::before,
+   .gridContainer::after {
       width: 50px;
    }
 }
