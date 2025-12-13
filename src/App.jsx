@@ -140,12 +140,12 @@ function App() {
       <Footer />
 
       {/* Analytics Panel (Floating) */}
-      <AnalyticsPanel
+      {/* <AnalyticsPanel
         analytics={analytics}
         isVisible={showAnalytics}
         onToggle={() => setShowAnalytics(!showAnalytics)}
         getMostClickedProduct={getMostClickedProduct}
-      />
+      /> */}
     </div>
   );
 }

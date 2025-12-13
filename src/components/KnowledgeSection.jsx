@@ -11,37 +11,37 @@ const KnowledgeSection = () => {
    const knowledgeItems = [
       {
          id: 1,
-         title: 'การทำความสะอาดที่ถูกวิธี',
+         title: 'Lorem',
          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-         imageSrc: '🧼',
+         imageSrc: 'https://placehold.co/500x300',
          date: '2024-12-15' // ← ADD THIS
       },
       {
          id: 2,
-         title: 'เคล็ดลับการฆ่าเชื้อโรค',
+         title: 'Lorem',
          description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-         imageSrc: '🦠',
+         imageSrc: 'https://placehold.co/500x300',
          date: '2024-12-14' // ← ADD THIS
       },
       {
          id: 3,
-         title: 'ผลิตภัณฑ์ที่ปลอดภัย',
+         title: 'Lorem',
          description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-         imageSrc: '✨',
+         imageSrc: 'https://placehold.co/500x300',
          date: '2024-12-13'
       },
       {
          id: 4,
-         title: 'เคล็ดลับการแพทย์โรค',
+         title: 'Lorem',
          description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-         imageSrc: '✨',
+         imageSrc: 'https://placehold.co/500x300',
          date: '2024-12-12'
       },
       {
          id: 5,
-         title: 'การตรวจสอบโรค',
+         title: 'Lorem',
          description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-         imageSrc: '✨',
+         imageSrc: 'https://placehold.co/500x300',
          date: '2024-12-14'
       }
    ];
@@ -85,12 +85,15 @@ const KnowledgeSection = () => {
             <div className={styles.knowledgeGrid}>
                {sortedItems.map(item => (
                   <div key={item.id} className={styles.knowledgeCard}>
-                     <div className={styles.dateTag}>{item.date}</div> {/* ← ADD THIS */}
-                     <div className={styles.imageSrcContainer}>
-                        <span className={styles.imageSrc}>{item.imageSrc}</span>
+                     <div className={styles.iconContainer}>
+                        <img className={styles.imageSrc} src={item.imageSrc}></img>
                      </div>
                      <h3 className={styles.cardTitle}>{item.title}</h3>
                      <p className={styles.cardDescription}>{item.description}</p>
+                     <div className={styles.cardFooter}>
+                        <span className={styles.readMore}>Read More</span>
+                        <span className={styles.publishDate}>Published on {item.date} | MISKA</span>
+                     </div>
                   </div>
                ))}
             </div>

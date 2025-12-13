@@ -2,6 +2,73 @@
   width: 100%;
 }
 
+/* Intro Section - First section after carousel */
+.introSection {
+  padding: clamp(3rem, 8vw, 6rem) 0;
+  background-color: #fff;
+  width: 100%;
+}
+
+.introContainer {
+  max-width: 2000px;
+  margin: 0 auto;
+  padding: 0 5%;
+  text-align: center;
+}
+
+/* First Block - Title with lines */
+.titleBlock {
+  margin-bottom: 3rem;
+}
+
+.topLine,
+.bottomLine {
+  width: 400px;
+  height: 2px;
+  background-color: #007bff;
+  margin: 0 auto;
+}
+
+.topLine {
+  margin-bottom: 1.5rem;
+}
+
+.bottomLine {
+  margin-top: 1.5rem;
+}
+
+.mainTitle {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  color: #007bff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #0056d2;
+  margin: 0.5rem 0 0 0;
+  letter-spacing: 3px;
+}
+
+/* Second Block - Description */
+.descriptionBlock {
+  background-color: #f8fbff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.1);
+}
+
+.description {
+  font-size: 24px;
+  color: #666;
+  line-height: 1.8;
+  margin: 0;
+  text-align: center;
+}
+
 /* Single Product Section - 80% Width, Fullscreen Feel */
 .singleProductSection {
   padding: clamp(3rem, 8vw, 6rem) 0;

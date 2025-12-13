@@ -1,5 +1,5 @@
 import React from 'react';
-import HeroCarousel from '../components/Hero'; 
+import HeroCarousel from '../components/Hero';
 import ProductCard from '../components/ProductCard';
 import KnowledgeSection from '../components/KnowledgeSection';
 import styles from '../styles/Home.module.css';
@@ -18,13 +18,33 @@ const Home = ({ analytics, onProductClick, onScrollToProducts }) => {
       {/* Hero Carousel - REPLACED! */}
       <HeroCarousel />
 
+      {/* Intro Block - NEW! First section */}
+      <section className={styles.introSection}>
+        <div className={styles.introContainer}>
+          {/* First Block - Title with lines */}
+          <div className={styles.titleBlock}>
+            <div className={styles.topLine}></div>
+            <h1 className={styles.mainTitle}>ยินดีต้อนรับสู่</h1>
+            <h2 className={styles.subtitle}>MISKA</h2>
+            <div className={styles.bottomLine}></div>
+          </div>
+
+          {/* Second Block - Description */}
+          <div className={styles.descriptionBlock}>
+            <p className={styles.description}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Single Product Showcase - 80% Width, Fullscreen Feel */}
       <section id="products" className={styles.singleProductSection}>
         <div className={styles.singleProductContainer}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>ผลิตภัณฑ์แนะนำ</h2>
+            <h2 className={styles.sectionTitle}>Lorem Ipsum</h2>
             <p className={styles.sectionSubtitle}>
-              นวัตกรรมความสะอาดระดับการแพทย์ เพื่อสุขภาพที่ดีของคุณ
+              Lorem ipsum dolor sit amet
             </p>
           </div>
 
@@ -45,22 +65,20 @@ const Home = ({ analytics, onProductClick, onScrollToProducts }) => {
       <section className={styles.visionSection}>
         <div className={styles.visionContainer}>
           <div className={styles.visionCard}>
-            <h3 className={styles.visionTitle}>วิสัยทัศน์</h3>
+            <h3 className={styles.visionTitle}>Lorem ipsum dolor sit amet</h3>
             <p className={styles.visionText}>
-              ขับเคลื่อนนวัตกรรมด้านความสะอาดและสุขภาพสู่ระดับการแพทย์
-              เพื่อยกระดับคุณภาพชีวิตของผู้คน ตั้งแต่ที่อยู่อาศัย ชุมชน
-              จนถึงการให้คำปรึกษาอย่างยั่งยืนและเป็นรูปธรรม
+              Lorem ipsum dolor sit amet
             </p>
           </div>
 
           <div className={styles.visionCard}>
-            <h3 className={styles.visionTitle}>พันธกิจ</h3>
+            <h3 className={styles.visionTitle}>Lorem ipsum dolor sit amet</h3>
             <ul className={styles.missionList}>
-              <li>พัฒนานวัตกรรมความสะอาดและสุขภาพมาตรฐานการแพทย์</li>
-              <li>ยกระดับคุณภาพชีวิตของผู้คนและที่อยู่อาศัยให้มีความเป็นอยู่ที่ดี</li>
-              <li>เสริมพลังชุมชนและวิสาหกิจท้องถิ่นสู่เศรษฐกิจสุขภาพที่ยั่งยืน</li>
-              <li>ถ่ายทอดองค์ความรู้และให้คำปรึกษาเพื่อพัฒนาศักยภาพ</li>
-              <li>ดำเนินธุรกิจด้วยความจริงใจ โปร่งใส และรับผิดชอบต่อสังคม</li>
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Lorem ipsum dolor sit amet</li>
             </ul>
           </div>
         </div>

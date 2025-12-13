@@ -8,17 +8,17 @@ const Footer = () => {
       {
          name: 'LINE',
          url: 'https://lin.ee/0NA2V1e',
-         icon: <img src="/logo/line_black_icon.png" alt="LINE" />
+         icon: <img src="/logoApp/line_colored_icon.png" alt="LINE" />
       },
       {
          name: 'Facebook',
          url: 'https://www.facebook.com/MiskaThailand',
-         icon: <img src="/logo/fb_black_icon.png" alt="Facebook" />
+         icon: <img src="/logoApp/fb_colored_icon2.png" alt="Facebook" />
       },
       {
          name: 'Instagram',
          url: 'https://www.instagram.com/miska_thailand',
-         icon: <img src="/logo/ig_black_icon.png" alt="Instagram" />
+         icon: <img src="/logoApp/ig_colored_icon.png" alt="Instagram" />
       }
    ];
 
@@ -29,8 +29,7 @@ const Footer = () => {
             <div className={styles.section}>
                <h4 className={styles.sectionTitle}>เกี่ยวกับ MISKA</h4>
                <p className={styles.description}>
-                  ขับเคลื่อนนวัตกรรมด้านความสะอาดและสุขภาพสู่ระดับการแพทย์
-                  เพื่อยกระดับคุณภาพชีวิตของผู้คน
+                  Lorem ipsum dolor sit amet
                </p>
             </div>
 
@@ -83,7 +82,7 @@ const Footer = () => {
          {/* Copyright */}
          <div className={styles.copyright}>
             <p className={styles.copyrightText}>
-               © {currentYear} MISKA. All rights reserved. | นวัตกรรมความสะอาดมาตรฐานการแพทย์
+               © {currentYear} MISKA. All rights reserved. | Lorem ipsum dolor sit amet
             </p>
          </div>
       </footer>

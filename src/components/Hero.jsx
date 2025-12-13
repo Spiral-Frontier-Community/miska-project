@@ -67,8 +67,6 @@ const HeroCarousel = () => {
               display: index === currentSlide ? 'block' : 'none'
             }}
           >
-            {/* Overlay gradient for better text visibility */}
-            <div className={styles.overlay}></div>
           </div>
         ))}
       </div>
@@ -93,11 +91,6 @@ const HeroCarousel = () => {
 
       {/* Bottom Overlay with Text and Dots */}
       <div className={styles.bottomOverlay}>
-        {/* Text Description */}
-        <div className={styles.slideText}>
-          <p>{slides[currentSlide].text}</p>
-        </div>
-
         {/* Pagination Dots */}
         <div className={styles.pagination}>
           {slides.map((_, index) => (

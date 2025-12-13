@@ -102,17 +102,9 @@
    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.1);
    transition: all 0.3s ease;
    text-align: center;
-}
-
-.dateTag {
-   display: inline-block;
-   background-color: #007bff;
-   color: #fff;
-   padding: 0.3rem 1rem;
-   border-radius: 20px;
-   font-size: 0.85rem;
-   font-weight: 600;
-   margin-bottom: 1rem;
+   display: flex;
+   flex-direction: column;
+   min-height: 350px;
 }
 
 .knowledgeCard:hover {
@@ -142,6 +134,34 @@
    line-height: 1.8;
 }
 
+.cardFooter {
+   margin-top: auto;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   padding-top: 1rem;
+}
+
+.readMore {
+   color: #007bff;
+   font-weight: 600;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   text-decoration: none;
+}
+
+.readMore:hover {
+   color: #0056d2;
+   text-decoration: underline;
+   transform: scale(1.05);
+}
+
+.publishDate {
+   font-size: 0.85rem;
+   color: #666;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
    .container {
@@ -153,6 +173,10 @@
    .knowledgeGrid {
       grid-auto-columns: minmax(280px, 1fr); /* ← Smaller cards on mobile */
       gap: 1rem;
+   }
+
+   .knowledgeCard {
+      min-height: 300px;
    }
 
    .container::before,

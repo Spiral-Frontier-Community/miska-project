@@ -1,24 +1,26 @@
 .carouselContainer {
   position: relative;
   width: 100%;
-  height: 90vh; /* Full screen height */
-  overflow: hidden;
+  height: auto; /* ← Keep auto */
+  min-height: unset; /* ← CHANGE from 120vh to unset */
+  overflow: hidden; /* ← ADD back - remove the comment */
+  margin-top: 0px;
 }
+
 
 .slidesWrapper {
   width: 100%;
-  height: 100%;
+  height: auto; /* ← CHANGE from 100% to auto */
   position: relative;
+  aspect-ratio: 16/9; /* ← ADD - This maintains image proportions */
 }
 
 .slide {
   width: 100%;
-  height: 100%;
-  /* Use contain so images are not cropped. Letterboxing may appear but image will be fully visible. */
-  background-size: contain;
-  background-position: center center;
+  height: 100%; /* ← CHANGE from min-height: 120vh to height: 100% */
+  background-size: cover; /* ← CHANGE from contain to cover */
+  background-position: center center; /* ← CHANGE from top center */
   background-repeat: no-repeat;
-  background-color: #000; /* fallback/background for letterboxing */
   position: absolute;
   top: 0;
   left: 0;
@@ -28,18 +30,6 @@
 .slide.active {
   opacity: 1;
   z-index: 1;
-}
-
-/* Dark overlay gradient for text readability */
-.overlay {
-  position: absolute;
-  bottom: 0;
-  top: 70%;
-  left: 0;
-  width: 100%;
-  height: 30%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-  z-index: 5; /* ← CHANGE from 1 to 5 */
 }
 
 /* Navigation Arrows */
@@ -61,7 +51,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  line-height: 1; 
+  line-height: 1;
   padding: 0;
 }
 
@@ -81,30 +71,14 @@
 /* Bottom Overlay Container */
 .bottomOverlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 5vw, 4rem);
+  bottom: 2rem; /* ← CHANGE from 0 to 2rem */
+  right: 2rem; /* ← ADD */
+  padding: 0; /* ← CHANGE from clamp(...) to 0 */
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 2rem;
+  justify-content: flex-end; /* ← CHANGE */
+  align-items: center; /* ← CHANGE */
+  gap: 0; /* ← CHANGE from 2rem to 0 */
   z-index: 15;
-}
-
-/* Slide Text */
-.slideText {
-  flex: 1;
-  color: #fff;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-}
-
-.slideText p {
-  font-size: clamp(1.2rem, 3vw, 2rem);
-  font-weight: 600;
-  line-height: 1.4;
-  margin: 0;
-  max-width: 800px;
 }
 
 /* Pagination Dots */
@@ -143,71 +117,33 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .carouselContainer {
-    height: 80vh;
+    min-height: unset; /* ← CHANGE */
+    margin-top: 0;
   }
-
-  .slideText p {
-    max-width: 600px;
-  }
-
-  .bottomOverlay {
-    padding: 1.5rem 2rem;
+  
+  .slidesWrapper {
+    aspect-ratio: 16/9; /* ← Keep aspect ratio */
   }
 }
 
 @media (max-width: 768px) {
   .carouselContainer {
-    height: 70vh;
+    min-height: unset; /* ← CHANGE */
+    margin-top: 0;
   }
-
-  .bottomOverlay {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1rem 1.5rem;
-  }
-
-  .slideText p {
-    font-size: 1rem;
-    max-width: 100%;
-  }
-
-  .pagination {
-    flex-direction: row;
-    gap: 0.5rem;
-  }
-
-  .navButton {
-    width: 40px;
-    height: 40px;
-    font-size: 1.5rem;
-  }
-
-  .prevButton {
-    left: 0.5rem;
-  }
-
-  .nextButton {
-    right: 0.5rem;
+  
+  .slidesWrapper {
+    aspect-ratio: 4/3; /* ← More square on mobile */
   }
 }
 
 @media (max-width: 480px) {
   .carouselContainer {
-    height: 60vh;
+    min-height: unset; /* ← CHANGE */
+    margin-top: 0;
   }
-
-  .slideText p {
-    font-size: 0.9rem;
-  }
-
-  .dot {
-    width: 10px;
-    height: 10px;
-  }
-
-  .dot.activeDot {
-    width: 12px;
-    height: 12px;
+  
+  .slidesWrapper {
+    aspect-ratio: 4/3; /* ← Keep mobile ratio */
   }
 }

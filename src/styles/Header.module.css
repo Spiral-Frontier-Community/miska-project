@@ -9,22 +9,27 @@
 
 .headerContainer {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end; /* nav on right, logo absolute */
   align-items: center;
   padding: 1rem max(5%, calc((100% - 1400px) / 2));
   max-width: 1400px;
   margin: 0 auto;
   transition: all 0.3s ease;
+  height: 150px; /* increased height for larger logo */
+  position: relative; /* for absolute logo */
 }
 
 .logoContainer {
   display: flex;
   align-items: center;
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
 
 /* Logo as Image instead of text */
 .logoImage {
-  height: clamp(60px, 10vw, 80px);
+  height: clamp(70px, 17vw, 150px);
   width: auto;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -131,10 +136,17 @@
 @media (max-width: 768px) {
   .headerContainer {
     padding: 1rem 4%;
+    height: auto; /* back to auto on mobile */
+    justify-content: space-between; /* logo left, toggle right */
+  }
+
+  .logoContainer {
+    position: static; /* back to normal on mobile */
   }
 
   .logoImage {
-    height:40px;
+    height: 40px;
+    width: auto; /* back to auto on mobile */
   }
 
   .desktopNav {
