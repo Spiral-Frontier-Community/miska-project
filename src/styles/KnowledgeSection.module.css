@@ -142,22 +142,21 @@
 
 .iconContainer {
    margin-bottom: 1rem;
-   /* ← CHANGE from 1.5rem */
-   height: 400px;
-   width: 250px;
-   /* ← ADD - 70% of card height */
+   width: 100%; /* ← Fills card width */
+   height: 400px; /* ← Fixed height */
    overflow: hidden;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .imageSrc {
    width: 100%;
    height: 100%;
-   /* ← ADD */
-   object-fit: cover;
-   /* ← ADD */
+   object-fit: cover; /* ← Fills container, crops if needed */
    display: block;
-   /* ← CHANGE from inline-block */
 }
+
 
 .cardTitle {
    font-size: clamp(1.3rem, 2.5vw, 1.7rem);
@@ -222,7 +221,16 @@
    }
 
    .knowledgeCard {
-      min-height: 300px;
+      min-height: 400px;
+      max-width: 400px;
+      width: 100%;
+      height: auto;
+      padding: 1rem;
+   }
+
+   .iconContainer {
+      width: 100%;
+      height: auto;
    }
 
    .gridContainer::before,
