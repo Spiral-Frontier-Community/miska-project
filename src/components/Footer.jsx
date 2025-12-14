@@ -38,11 +38,11 @@ const Footer = () => {
                <h4 className={styles.sectionTitle}>ติดต่อเรา</h4>
                <div className={styles.contactInfo}>
                   <p className={styles.contactItem}>
-                     📍 214 หมู่12 ตำบลไรน้อย อำเภอเมือง<br />
+                     214 หมู่12 ตำบลไรน้อย อำเภอเมือง<br />
                      จังหวัดอุบลราชธานี 34000
                   </p>
                   <p className={styles.contactItem}>
-                     📧 miskaofficial@gmail.com
+                     miskaofficial@gmail.com
                   </p>
                </div>
             </div>
