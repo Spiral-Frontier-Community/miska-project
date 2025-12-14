@@ -141,7 +141,7 @@
 @media (max-width: 480px) {
   .slidesWrapper {
     aspect-ratio: unset; /* ← CHANGE from 4/3 */
-    min-height: 50vh; /* ← ADD */
+    min-height: 45vh; /* ← ADD */
   }
 }
 
