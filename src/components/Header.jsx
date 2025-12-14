@@ -3,6 +3,27 @@ import styles from '../styles/Header.module.css';
 
 const Header = ({ onNavigate, currentSection }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true); // ← ADD
+  const [lastScrollY, setLastScrollY] = useState(0); // ← ADD
+
+  // ← ADD scroll listener
+  React.useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Hide header when scrolling down, show when scrolling up
+      if (currentScrollY > lastScrollY && currentScrollY > 200) {
+        setIsVisible(false); // Scrolling down & past 150px
+      } else {
+        setIsVisible(true); // Scrolling up
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   const navItems = [
     { id: 'home', label: 'หน้าหลัก', scrollTo: null },
@@ -30,8 +51,9 @@ const Header = ({ onNavigate, currentSection }) => {
     }
   };
 
+  
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${!isVisible ? styles.hidden : ''}`}>
       <div className={styles.headerContainer}>
         {/* Logo Image - Replace text with image */}
         <div className={styles.logoContainer}>
