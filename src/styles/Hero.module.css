@@ -127,13 +127,21 @@
 }
 
 @media (max-width: 768px) {
-  .carouselContainer {
-    min-height: unset; /* ← CHANGE */
-    margin-top: 0;
+  .slidesWrapper {
+    aspect-ratio: unset; /* ← CHANGE from 4/3 */
+    min-height: 45vh; /* ← ADD */
   }
   
+  .slide {
+    background-size: cover; /* ← Keep cover to fill */
+    background-position: center; /* ← Keep centered */
+  }
+}
+
+@media (max-width: 480px) {
   .slidesWrapper {
-    aspect-ratio: 4/3; /* ← More square on mobile */
+    aspect-ratio: unset; /* ← CHANGE from 4/3 */
+    min-height: 50vh; /* ← ADD */
   }
 }
 
@@ -141,9 +149,5 @@
   .carouselContainer {
     min-height: unset; /* ← CHANGE */
     margin-top: 0;
-  }
-  
-  .slidesWrapper {
-    aspect-ratio: 4/3; /* ← Keep mobile ratio */
   }
 }
