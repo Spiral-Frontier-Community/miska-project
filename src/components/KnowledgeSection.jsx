@@ -13,49 +13,49 @@ const KnowledgeSection = () => {
          id: 1,
          title: 'Lorem',
          description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-         imageSrc: 'https://placehold.co/500x700',
+         imageSrc: 'https://placehold.co/250x400',
          date: '2024-12-15' 
       },
       {
          id: 2,
          title: 'Lorem',
          description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-         imageSrc: 'https://placehold.co/500x700',
+         imageSrc: 'https://placehold.co/250x400',
          date: '2024-12-14' 
       },
       {
          id: 3,
          title: 'Lorem',
          description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-         imageSrc: 'https://placehold.co/500x700',
+         imageSrc: 'https://placehold.co/250x400',
          date: '2024-12-13'
       },
       {
          id: 4,
          title: 'Lorem',
          description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-         imageSrc: 'https://placehold.co/500x700',
+         imageSrc: 'https://placehold.co/250x400',
          date: '2024-12-12'
       },
       {
          id: 5,
          title: 'Lorem',
          description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-         imageSrc: 'https://placehold.co/500x700',
+         imageSrc: 'https://placehold.co/250x400',
          date: '2024-12-15'
       },
       {
          id: 6,
          title: 'Lorem',
          description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-         imageSrc: 'https://placehold.co/500x700',
+         imageSrc: 'https://placehold.co/250x400',
          date: '2024-12-14'
       },
       {
          id: 7,
          title: 'Lorem',
          description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-         imageSrc: 'https://placehold.co/500x700',
+         imageSrc: 'https://placehold.co/250x400',
          date: '2024-12-24'
       }
    ];

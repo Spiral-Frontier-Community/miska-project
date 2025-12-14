@@ -132,7 +132,7 @@
    text-align: center;
    display: flex;
    flex-direction: column;
-   min-height: 650px;
+   min-height: 600px;
 }
 
 .knowledgeCard:hover {
@@ -143,7 +143,8 @@
 .iconContainer {
    margin-bottom: 1rem;
    /* ← CHANGE from 1.5rem */
-   height: 450px;
+   height: 400px;
+   width: 250px;
    /* ← ADD - 70% of card height */
    overflow: hidden;
 }
