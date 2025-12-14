@@ -127,27 +127,59 @@
 }
 
 @media (max-width: 768px) {
+  .carouselContainer {
+    min-height: unset;
+    margin-top: 0;
+  }
+
   .slidesWrapper {
-    aspect-ratio: unset; /* ← CHANGE from 4/3 */
-    min-height: 45vh; /* ← ADD */
+    aspect-ratio: 16/9; /* ← KEEP 16/9 like desktop */
+    width: 100%; /* ← Full width */
+    height: auto;
   }
   
   .slide {
-    background-size: cover; /* ← Keep cover to fill */
-    background-position: center; /* ← Keep centered */
+    background-size: contain; /* ← CHANGE to show full image */
+    background-position: center;
+    background-color: #000; /* ← Black bars if needed */
+  }
+
+  .bottomOverlay {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .navButton {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
+  .prevButton {
+    left: 0.5rem;
+  }
+
+  .nextButton {
+    right: 0.5rem;
   }
 }
 
 @media (max-width: 480px) {
   .slidesWrapper {
-    aspect-ratio: unset; /* ← CHANGE from 4/3 */
-    min-height: 45vh; /* ← ADD */
+    aspect-ratio: 16/9; /* ← KEEP same ratio */
   }
-}
 
-@media (max-width: 480px) {
-  .carouselContainer {
-    min-height: unset; /* ← CHANGE */
-    margin-top: 0;
+  .slide {
+    background-size: contain; /* ← Show full image */
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .dot.activeDot {
+    width: 12px;
+    height: 12px;
   }
 }
