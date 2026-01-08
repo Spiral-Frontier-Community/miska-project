@@ -27,8 +27,8 @@ const Header = ({ onNavigate, currentSection }) => {
 
   const navItems = [
     { id: 'home', label: 'หน้าหลัก', scrollTo: null },
-    { id: 'about', label: 'เกี่ยวกับเรา', scrollTo: 'footer' }, // Scroll to footer
     { id: 'products', label: 'ผลิตภัณฑ์', scrollTo: 'products' }, // Scroll to products
+    { id: 'about', label: 'เกี่ยวกับเรา', scrollTo: 'footer' }, // Scroll to footer
     { id: 'contact', label: 'ติดต่อ', scrollTo: 'footer' } // Scroll to footer
   ];
 

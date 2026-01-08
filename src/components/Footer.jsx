@@ -6,11 +6,6 @@ const Footer = () => {
 
    const socialLinks = [
       {
-         name: 'LINE',
-         url: 'https://lin.ee/0NA2V1e',
-         icon: <img src="/logoApp/line_colored_icon.png" alt="LINE" />
-      },
-      {
          name: 'Facebook',
          url: 'https://www.facebook.com/MiskaThailand',
          icon: <img src="/logoApp/fb_colored_icon2.png" alt="Facebook" />
@@ -29,7 +24,7 @@ const Footer = () => {
             <div className={styles.section}>
                <h4 className={styles.sectionTitle}>เกี่ยวกับ MISKA</h4>
                <p className={styles.description}>
-                  Lorem ipsum dolor sit amet
+                  บริษัท มายด์ ทู มิส เวลแคร์ จำกัด พัฒนาผลิตภัณฑ์ดูแลเส้นผมและหนังศีรษะที่เน้นความสะอาดความอ่อนโยน ภายใต้แบรนด์ Miska ดรายแชมพูที่ช่วยให้ผมรู้สึกสะอาด สดชื่น ลดกลิ่นอับ โดยไม่ต้องใช้น้ำ เหมาะสำหรับผู้ป่วยหรือผู้พักฟื้นที่สระผมลำบาก ผู้ที่ทำกิจกรรมกลางแจ้ง รวมถึงผู้ที่ต้องการความสะดวกในชีวิตประจำวัน เพื่อให้การดูแลเส้นผมเป็นเรื่องง่ายและสบายในทุกสถานการณ์
                </p>
             </div>
 
@@ -38,7 +33,7 @@ const Footer = () => {
                <h4 className={styles.sectionTitle}>ติดต่อเรา</h4>
                <div className={styles.contactInfo}>
                   <p className={styles.contactItem}>
-                     214 หมู่12 ตำบลไรน้อย อำเภอเมือง<br />
+                     214 หมู่12 ตำบลไร่น้อย อำเภอเมือง<br />
                      จังหวัดอุบลราชธานี 34000
                   </p>
                   <p className={styles.contactItem}>
@@ -47,7 +42,7 @@ const Footer = () => {
                </div>
             </div>
 
-            {/* Social Links */}
+            {/* Social Links - Left side */}
             <div className={styles.section}>
                <h4 className={styles.sectionTitle}>ติดตามเรา</h4>
                <div className={styles.socialLinks}>
@@ -66,8 +61,9 @@ const Footer = () => {
                </div>
             </div>
 
-            {/* QR Code */}
+            {/* LINE QR Code - Right side (bigger) */}
             <div className={styles.section}>
+               <h4 className={styles.sectionTitle}>เพิ่มเพื่อนผ่าน LINE</h4>
                <div className={styles.qrSection}>
                   <img
                      src="/images/socialQR/Line_QRcode.png"
@@ -82,7 +78,7 @@ const Footer = () => {
          {/* Copyright */}
          <div className={styles.copyright}>
             <p className={styles.copyrightText}>
-               © {currentYear} MISKA. All rights reserved. | Lorem ipsum dolor sit amet
+               © {currentYear} MISKA. All rights reserved.
             </p>
          </div>
       </footer>

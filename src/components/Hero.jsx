@@ -8,27 +8,27 @@ const HeroCarousel = () => {
   const slides = [
     {
       id: 1,
-      image: '/images/background/background_long_1.jpg', 
+      image: '/images/background/background_long_0.jpg', 
       text: 'เคยเป็นไหม... แค่อยาก สระผม ให้สดชื่น แต่ ทำไม่ได้จริงๆ'
     },
     {
       id: 2,
-      image: '/images/background/background_long_2.jpg',
+      image: '/images/background/background_long_1.jpg',
       text: 'ระหว่างฟักฟื้น... แค่อะ สระผม ก็ ลำบาก'
     },
     {
       id: 3,
-      image: '/images/background/background_long_3.jpg',
+      image: '/images/background/background_long_2.jpg',
       text: 'หลังศัลยกรรม... แผลห้ามโดนน้ำ จะ สระผม ก็ ลำบาก'
     },
     {
       id: 4,
-      image: '/images/background/background_long_4.jpg',
+      image: '/images/background/background_long_3.jpg',
       text: 'HOW TO USE - วิธีใช้งาน Miska Dry Shampoo'
     },
     {
       id: 5,
-      image: '/images/background/background_long_5.jpg',
+      image: '/images/background/background_long_4.jpg',
       text: 'รู้หรือไม่? แบคทีเรียและเชื้อรามีสะสมบนหนังศีระ'
     }
   ];

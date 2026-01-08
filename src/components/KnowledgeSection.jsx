@@ -8,56 +8,45 @@ import styles from '../styles/KnowledgeSection.module.css';
  */
 const KnowledgeSection = () => {
    // ⭐ ADMIN: Edit this array to add/remove/update knowledge items
+
+   const [selectedItem, setSelectedItem] = React.useState(null);
+
    const knowledgeItems = [
       {
          id: 1,
-         title: 'Lorem',
-         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-         imageSrc: 'https://placehold.co/250x400',
-         date: '2024-12-15' 
+         title: 'TED Youth Startup Championship 2025',
+         description: 'บริษัท มายด์ ทู มิส เวลแคร์ จำกัด เข้าร่วมโครงการ TED Youth Startup Championship 2025 และได้รับ รางวัลรองชนะเลิศอันดับหนึ่ง ระดับภูมิภาคตะวันออกเฉียงเหนือ จากการประกวดนวัตกรรมภายใต้การจัดของ TED Fund',
+         imageSrc: '/images/news/news_pic_01.jpg',
+         date: '2025' 
       },
       {
          id: 2,
-         title: 'Lorem',
-         description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-         imageSrc: 'https://placehold.co/250x400',
-         date: '2024-12-14' 
+         title: 'TED Youth Startup 2025\n(TED Fund – POC)',
+         description: 'บริษัท มายด์ ทู มิส เวลแคร์ จำกัด ได้รับทุนสนับสนุนภายใต้โครงการ TED Youth Startup 2025 ในรูปแบบ TED Fund Proof of Concept (POC) สำหรับการพัฒนาผลงาน ผลิตภัณฑ์ทำความสะอาดเส้นผมและหนังศีรษะแบบไม่ใช้น้ำ ด้วย Micellar Technology',
+         imageSrc: '/images/news/news_pic_02.jpg',
+         date: '2025' 
       },
       {
          id: 3,
-         title: 'Lorem',
-         description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-         imageSrc: 'https://placehold.co/250x400',
-         date: '2024-12-13'
+         title: 'TED Fund Grant Day 2025',
+         description: 'บริษัท มายด์ ทู มิส เวลแคร์ จำกัด เข้าร่วมงาน TED Fund Grant Day 2025 เพื่อรับโล่รางวัล และแสดงความยินดีในฐานะหนึ่งในบริษัทที่ได้รับทุนสนับสนุนจาก TED Fund',
+         imageSrc: '/images/news/news_pic_03_01.jpg',
+         date: '2025'
       },
       {
          id: 4,
-         title: 'Lorem',
-         description: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-         imageSrc: 'https://placehold.co/250x400',
-         date: '2024-12-12'
+         title: 'VC Collab 2025',
+         description: 'บริษัท มายด์ ทู มิส เวลแคร์ จำกัด เข้าร่วมโครงการ VC Collab 2025 และได้รับรางวัล “โดนใจ VC” ซึ่งเป็นอีกหนึ่งมุมมองสะท้อนถึงศักยภาพของแบรนด์และแนวทางการพัฒนาผลิตภัณฑ์',
+         imageSrc: '/images/news/news_pic_04_01.jpg',
+         date: '2025'
       },
-      {
-         id: 5,
-         title: 'Lorem',
-         description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-         imageSrc: 'https://placehold.co/250x400',
-         date: '2024-12-15'
-      },
-      {
-         id: 6,
-         title: 'Lorem',
-         description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-         imageSrc: 'https://placehold.co/250x400',
-         date: '2024-12-14'
-      },
-      {
-         id: 7,
-         title: 'Lorem',
-         description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-         imageSrc: 'https://placehold.co/250x400',
-         date: '2024-12-24'
-      }
+      // {
+      //    id: 5,
+      //    title: 'VC Collab 2026',
+      //    description: 'บริษัท มายด์ ทู มิส เวลแคร์ จำกัด เข้าร่วมโครงการ VC Collab 2025 และได้รับรางวัล “โดนใจ VC” ซึ่งเป็นอีกหนึ่งมุมมองสะท้อนถึงศักยภาพของแบรนด์และแนวทางการพัฒนาผลิตภัณฑ์',
+      //    imageSrc: '/images/news/news_pic_04_01.jpg',
+      //    date: '2026-12-12'
+      // },
    ];
    
    // ← ADD THIS: Sort by date (newest first)
@@ -100,18 +89,30 @@ const KnowledgeSection = () => {
                {sortedItems.map(item => (
                   <div key={item.id} className={styles.knowledgeCard}>
                      <div className={styles.iconContainer}>
-                        <img className={styles.imageSrc} src={item.imageSrc}></img>
+                        <img className={styles.imageSrc} src={item.imageSrc} alt={item.title} />
                      </div>
                      <h3 className={styles.cardTitle}>{item.title}</h3>
                      <p className={styles.cardDescription}>{item.description}</p>
                      <div className={styles.cardFooter}>
-                        <span className={styles.readMore}>Read More</span>
+                        <span className={styles.readMore} onClick={() => setSelectedItem(item)}>Read More</span>
                         <span className={styles.publishDate}>Published on {item.date} | MISKA</span>
                      </div>
                   </div>
                ))}
             </div>
          </div>
+
+         {selectedItem && (
+            <div className={styles.modal} onClick={() => setSelectedItem(null)}>
+               <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+                  <button className={styles.closeBtn} onClick={() => setSelectedItem(null)}>✕</button>
+                  <img src={selectedItem.imageSrc} alt={selectedItem.title} className={styles.modalImage} />
+                  <h3 className={styles.modalTitle}>{selectedItem.title}</h3>
+                  <p className={styles.modalDescription}>{selectedItem.description}</p>
+                  <p className={styles.modalDate}>Published on {selectedItem.date} | MISKA</p>
+               </div>
+            </div>
+         )}
       </section>
    );
 };

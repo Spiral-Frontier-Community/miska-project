@@ -8,19 +8,19 @@ const ProductCard = ({ product, clickCount, onProductClick }) => {
          id: 1,
          name: 'Item 1',
          desc: '',
-         image: 'https://placehold.co/500x600'
+         image: '/images/products/miska_product4.jpg'
       },
       {
          id: 2,
          name: 'Item 2',
          desc: '',
-         image: 'https://placehold.co/500x300'
+         image: '/images/products/miska_product5.jpg'
       },
       {
          id: 3,
          name: 'Item 3',
          desc: '',
-         image: 'https://placehold.co/500x300'
+         image: '/images/products/miska_product3.jpg'
       },
       
    ];

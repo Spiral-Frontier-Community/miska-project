@@ -32,7 +32,7 @@ const Home = ({ analytics, onProductClick, onScrollToProducts }) => {
           {/* Second Block - Description */}
           <div className={styles.descriptionBlock}>
             <p className={styles.description}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              บริษัท มายด์ ทู มิส เวลแคร์ จำกัด พัฒนาผลิตภัณฑ์ดูแลเส้นผมและหนังศีรษะที่เน้นความสะอาดความอ่อนโยน ภายใต้แบรนด์ Miska ดรายแชมพูที่ช่วยให้ผมรู้สึกสะอาด สดชื่น ลดกลิ่นอับ โดยไม่ต้องใช้น้ำ เหมาะสำหรับผู้ป่วยหรือผู้พักฟื้นที่สระผมลำบาก ผู้ที่ทำกิจกรรมกลางแจ้ง รวมถึงผู้ที่ต้องการความสะดวกในชีวิตประจำวัน เพื่อให้การดูแลเส้นผมเป็นเรื่องง่ายและสบายในทุกสถานการณ์
             </p>
           </div>
         </div>
@@ -42,10 +42,10 @@ const Home = ({ analytics, onProductClick, onScrollToProducts }) => {
       <section id="products" className={styles.singleProductSection}>
         <div className={styles.singleProductContainer}>
           <div className={styles.sectionHeader}>
-            <h2 className={styles.sectionTitle}>Lorem Ipsum</h2>
-            <p className={styles.sectionSubtitle}>
+            <h2 className={styles.sectionTitle}>ผลิตภัณฑ์</h2>
+            {/* <p className={styles.sectionSubtitle}>
               Lorem ipsum dolor sit amet
-            </p>
+            </p> */}
           </div>
 
           <div className={styles.singleProductWrapper}>
@@ -65,20 +65,23 @@ const Home = ({ analytics, onProductClick, onScrollToProducts }) => {
       <section className={styles.visionSection}>
         <div className={styles.visionContainer}>
           <div className={styles.visionCard}>
-            <h3 className={styles.visionTitle}>Lorem ipsum dolor sit amet</h3>
+            <h3 className={styles.visionTitle}>วิศัยทัศน์</h3>
             <p className={styles.visionText}>
-              Lorem ipsum dolor sit amet
+              เรามุ่งเน้นการพัฒนานวัตกรรมด้านความสะอาดและสุขภาพสู่ระดับการแพทย์ 
+              เพื่อยกระดับคุณภาพชีวิตของผู้คน 
+              ตั้งแต่ที่อยู่อาศัย ชุมชน 
+              ไปจนถึงการให้คำปรึกษาที่สามารถนำไปใช้ได้จริงและยั่งยืน
             </p>
           </div>
 
           <div className={styles.visionCard}>
-            <h3 className={styles.visionTitle}>Lorem ipsum dolor sit amet</h3>
+            <h3 className={styles.visionTitle}>พันธกิจ</h3>
             <ul className={styles.missionList}>
-              <li>Lorem ipsum dolor sit amet</li>
-              <li>Lorem ipsum dolor sit amet</li>
-              <li>Lorem ipsum dolor sit amet</li>
-              <li>Lorem ipsum dolor sit amet</li>
-              <li>Lorem ipsum dolor sit amet</li>
+              <li>1. พัฒนานวัตกรรมความสะอาดและสุขภาพมาตรฐานการแพทย์</li>
+              <li>2. ยกระดับคุณภาพชีวิตของผู้คนและที่อยู่อาศัยให้มีความเป็นอยู่ที่ดี มีคุณค่า และยั่งยืน</li>
+              <li>3. เสริมพลังชุมชนและวิสาหกิจท้องถิ่นสู่เศรษฐกิจสุขภาพที่เติบโตและยั่งยืน</li>
+              <li>4. ถ่ายทอดองค์ความรู้และให้คำปรึกษาเพื่อพัฒนาศักยภาพและโอกาสทางธุรกิจ</li>
+              <li>5. ดำเนินธุรกิจด้วยความจริงใจ โปร่งใส และรับผิดชอบต่อสังคม</li>
             </ul>
           </div>
         </div>

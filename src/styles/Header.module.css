@@ -35,7 +35,7 @@
 
 /* Logo as Image instead of text */
 .logoImage {
-  height: 150px;
+  height: 17vh;
   width: auto;
   cursor: pointer;
   transition: all 0.3s ease;
