@@ -142,14 +142,14 @@
 
 .knowledgeCard {
    background-color: #fff;
-   padding: clamp(1.7rem, 3.5vw, 2.5rem);
+   padding: clamp(1.5rem, 3vw, 2rem);
    border-radius: 20px;
    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.1);
    transition: all 0.3s ease;
    text-align: center;
    display: flex;
    flex-direction: column;
-   min-height: 408px;
+   min-height: 300px;
    min-width: 340px;
    scroll-snap-align: center;
    scroll-snap-stop: always;
