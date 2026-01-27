@@ -2,6 +2,8 @@
    padding: clamp(3rem, 8vw, 6rem) 0;
    background: linear-gradient(135deg, #f8fbff 0%, #e3f2ff 100%);
    width: 100%;
+   scroll-snap-align: start;
+   scroll-snap-stop: always;
 }
 
 /* Shadow fade effect on edges */
@@ -140,15 +142,17 @@
 
 .knowledgeCard {
    background-color: #fff;
-   padding: clamp(2rem, 4vw, 3rem);
+   padding: clamp(1.7rem, 3.5vw, 2.5rem);
    border-radius: 20px;
    box-shadow: 0 4px 20px rgba(0, 123, 255, 0.1);
    transition: all 0.3s ease;
    text-align: center;
    display: flex;
    flex-direction: column;
-   min-height: 600px;
-   min-width: 400px;
+   min-height: 408px;
+   min-width: 340px;
+   scroll-snap-align: center;
+   scroll-snap-stop: always;
 }
 
 .knowledgeCard:hover {
@@ -158,8 +162,8 @@
 
 .iconContainer {
    margin-bottom: 1rem;
-   width: 100%; /* ← Fills card width */
-   height: 400px; /* ← Fixed height */
+   width: 100%;
+   height: 240px;
    overflow: hidden;
    display: flex;
    justify-content: center;

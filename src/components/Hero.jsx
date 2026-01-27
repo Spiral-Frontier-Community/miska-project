@@ -8,7 +8,7 @@ const HeroCarousel = () => {
   const slides = [
     {
       id: 1,
-      image: '/images/background/background_long_0.jpg', 
+      image: '/images/background/background_long_0.jpg',
       text: 'เคยเป็นไหม... แค่อยาก สระผม ให้สดชื่น แต่ ทำไม่ได้จริงๆ'
     },
     {
@@ -37,7 +37,7 @@ const HeroCarousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000); // Change slide every 5 seconds
+    }, 1000000000); // Change slide every 5 seconds
 
     return () => clearInterval(interval);
   }, [slides.length]);
@@ -59,17 +59,17 @@ const HeroCarousel = () => {
       {/* Slides */}
       <div className={styles.slidesWrapper}>
         {slides.map((slide, index) => (
-          <div
-            key={slide.id}
-            className={`${styles.slide} ${index === currentSlide ? styles.active : ''}`}
-            style={{
-              backgroundImage: `url(${slide.image})`,
-              display: index === currentSlide ? 'block' : 'none'
-            }}
-          >
-          </div>
+          index === currentSlide && (
+            <img
+              key={slide.id}
+              src={slide.image}
+              alt=""
+              className={styles.slideImage}
+            />
+          )
         ))}
       </div>
+
 
       {/* Previous Button */}
       <button

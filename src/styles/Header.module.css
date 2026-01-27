@@ -21,7 +21,7 @@
   max-width: 1400px;
   margin: 0 auto;
   transition: all 0.3s ease;
-  height: 150px; /* increased height for larger logo */
+  height: 100px;
   position: relative; /* for absolute logo */
 }
 
@@ -29,13 +29,14 @@
   display: flex;
   align-items: center;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 100px;
 }
 
 /* Logo as Image instead of text */
 .logoImage {
-  height: 17vh;
+  height: 10vh;
   width: auto;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -148,11 +149,14 @@
 
   .logoContainer {
     position: static; /* back to normal on mobile */
+    transform: none;
+    margin-left: 12px;
   }
 
   .logoImage {
-    height: 15vh;
+    height: 8vh;
     width: auto; /* back to auto on mobile */
+    
   }
 
   .desktopNav {

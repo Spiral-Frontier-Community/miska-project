@@ -39,6 +39,11 @@ code {
   width: 100%;
 }
 
+.main-content > * {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
 /* Global Button Styles */
 button {
   font-family: inherit;
@@ -155,4 +160,17 @@ img {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  scroll-snap-type: y mandatory; /* ← ADD */
+  overflow-y: scroll; /* ← ADD */
+  height: 100vh; /* ← ADD */
+}
+
+.main-content > * {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }

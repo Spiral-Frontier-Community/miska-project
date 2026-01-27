@@ -65,7 +65,7 @@ const Home = ({ analytics, onProductClick, onScrollToProducts }) => {
       <section className={styles.visionSection}>
         <div className={styles.visionContainer}>
           <div className={styles.visionCard}>
-            <h3 className={styles.visionTitle}>วิศัยทัศน์</h3>
+            <h3 className={styles.visionTitle}>วิสัยทัศน์</h3>
             <p className={styles.visionText}>
               เรามุ่งเน้นการพัฒนานวัตกรรมด้านความสะอาดและสุขภาพสู่ระดับการแพทย์ 
               เพื่อยกระดับคุณภาพชีวิตของผู้คน 
@@ -83,6 +83,13 @@ const Home = ({ analytics, onProductClick, onScrollToProducts }) => {
               <li>4. ถ่ายทอดองค์ความรู้และให้คำปรึกษาเพื่อพัฒนาศักยภาพและโอกาสทางธุรกิจ</li>
               <li>5. ดำเนินธุรกิจด้วยความจริงใจ โปร่งใส และรับผิดชอบต่อสังคม</li>
             </ul>
+          </div>
+
+          <div className={styles.visionCard}>
+            <h3 className={styles.visionTitle}>เกี่ยวกับ Miska</h3>
+            <p className={styles.visionText}>
+              บริษัท มายด์ ทู มิส เวลแคร์ จำกัด พัฒนาผลิตภัณฑ์ดูแลเส้นผมและหนังศีรษะที่เน้นความสะอาดความอ่อนโยน ภายใต้แบรนด์ Miska ดรายแชมพูที่ช่วยให้ผมรู้สึกสะอาด สดชื่น ลดกลิ่นอับ โดยไม่ต้องใช้น้ำ เหมาะสำหรับผู้ป่วยหรือผู้พักฟื้นที่สระผมลำบาก ผู้ที่ทำกิจกรรมกลางแจ้ง รวมถึงผู้ที่ต้องการความสะดวกในชีวิตประจำวัน เพื่อให้การดูแลเส้นผมเป็นเรื่องง่ายและสบายในทุกสถานการณ์
+            </p>
           </div>
         </div>
       </section>

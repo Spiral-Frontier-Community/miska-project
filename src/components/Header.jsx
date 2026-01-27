@@ -58,7 +58,7 @@ const Header = ({ onNavigate, currentSection }) => {
         {/* Logo Image - Replace text with image */}
         <div className={styles.logoContainer}>
           <img
-            src="/images/Logo/logo_2_bgRemoved.png"
+            src="/images/Logo/miska_logo_quality.png"
             alt="MISKA Logo"
             className={styles.logoImage}
           />

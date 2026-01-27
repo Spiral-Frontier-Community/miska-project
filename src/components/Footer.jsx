@@ -8,12 +8,12 @@ const Footer = () => {
       {
          name: 'Facebook',
          url: 'https://www.facebook.com/MiskaThailand',
-         icon: <img src="/logoApp/fb_colored_icon2.png" alt="Facebook" />
+         icon: <img src="/logoApp/fb_bw_logo_3.png" alt="Facebook" />
       },
       {
          name: 'Instagram',
          url: 'https://www.instagram.com/miska_thailand',
-         icon: <img src="/logoApp/ig_colored_icon.png" alt="Instagram" />
+         icon: <img src="/logoApp/ig_bw_logo_3.png" alt="Instagram" />
       }
    ];
 
@@ -22,10 +22,8 @@ const Footer = () => {
          <div className={styles.container}>
             {/* Company Info */}
             <div className={styles.section}>
-               <h4 className={styles.sectionTitle}>เกี่ยวกับ MISKA</h4>
-               <p className={styles.description}>
-                  บริษัท มายด์ ทู มิส เวลแคร์ จำกัด พัฒนาผลิตภัณฑ์ดูแลเส้นผมและหนังศีรษะที่เน้นความสะอาดความอ่อนโยน ภายใต้แบรนด์ Miska ดรายแชมพูที่ช่วยให้ผมรู้สึกสะอาด สดชื่น ลดกลิ่นอับ โดยไม่ต้องใช้น้ำ เหมาะสำหรับผู้ป่วยหรือผู้พักฟื้นที่สระผมลำบาก ผู้ที่ทำกิจกรรมกลางแจ้ง รวมถึงผู้ที่ต้องการความสะดวกในชีวิตประจำวัน เพื่อให้การดูแลเส้นผมเป็นเรื่องง่ายและสบายในทุกสถานการณ์
-               </p>
+               <h4 className={styles.sectionTitle}>บริษัท มาย ทู มิส เวลแคร์ จำกัด</h4>
+               
             </div>
 
             {/* Contact Info */}
@@ -37,8 +35,11 @@ const Footer = () => {
                      จังหวัดอุบลราชธานี 34000
                   </p>
                   <p className={styles.contactItem}>
-                     miskaofficial@gmail.com
+                     Contact: miskaofficial@gmail.com
+                     <br></br>
+                     Tel: 093-374-4356
                   </p>
+
                </div>
             </div>
 
@@ -53,9 +54,9 @@ const Footer = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className={styles.socialLink}
+                        title={social.name}
                      >
-                        <span className={styles.socialIcon}>{social.icon}</span>
-                        {social.name}
+                        {social.icon}
                      </a>
                   ))}
                </div>

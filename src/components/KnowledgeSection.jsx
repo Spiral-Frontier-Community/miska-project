@@ -77,9 +77,9 @@ const KnowledgeSection = () => {
       <section className={styles.knowledgeSection}>
          <div className={styles.container}>
             <div className={styles.sectionHeader}>
-               <h2 className={styles.sectionTitle}>สาระน่ารู้</h2>
+               <h2 className={styles.sectionTitle}>ข่าวสารและกิจกรรม</h2>
                <p className={styles.sectionSubtitle}>
-                  เคล็ดลับและความรู้เกี่ยวกับความสะอาดและสุขภาพ
+                  ติดตามข่าวสารและกิจกรรมความเคลื่อนไหว 
                </p>
             </div>
          </div>
