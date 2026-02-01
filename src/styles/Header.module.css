@@ -17,8 +17,8 @@
   display: flex;
   justify-content: flex-end; /* nav on right, logo absolute */
   align-items: center;
-  padding: 1rem max(5%, calc((100% - 1400px) / 2));
-  max-width: 1400px;
+  padding: 1rem max(5%, calc((100% - 1600px) / 2));
+  max-width: 1600px;
   margin: 0 auto;
   transition: all 0.3s ease;
   height: 100px;

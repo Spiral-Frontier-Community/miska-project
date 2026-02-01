@@ -8,8 +8,8 @@
 
 /* Shadow fade effect on edges */
 .container {
-   padding: 0 max(5%, calc((100% - 1400px) / 2));
-   max-width: 1400px;
+   padding: 0 max(5%, calc((100% - 1600px) / 2));
+   max-width: 1600px;
    margin: 0 auto;
    position: relative;
 }
