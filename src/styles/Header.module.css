@@ -36,10 +36,25 @@
 
 /* Logo as Image instead of text */
 .logoImage {
-  height: 10vh;
+  height: auto;
+  max-height: 10vh;
   width: auto;
+  max-width: 200px;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+/* Logo color variants for testing */
+.logoImage.white {
+  filter: brightness(0) invert(1);
+}
+
+.logoImage.black {
+  filter: brightness(0);
+}
+
+.logoImage.original {
+  filter: none;
 }
 
 .logoImage:hover {
@@ -154,8 +169,10 @@
   }
 
   .logoImage {
-    height: 8vh;
-    width: auto; /* back to auto on mobile */
+    height: auto;
+    max-height: 8vh;
+    width: auto;
+    max-width: 150px;
     
   }
 

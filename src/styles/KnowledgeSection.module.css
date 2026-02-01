@@ -187,14 +187,12 @@
 
 .cardDescription {
    font-size: clamp(0.85rem, 1.3vw, 0.95rem);
-   /* ← CHANGE - smaller */
    color: #666;
-   line-height: 1.6;
-   /* ← CHANGE from 1.8 */
+   line-height: 1.8;
+   text-align: justify;
+   word-spacing: 0.05em;
    display: -webkit-box;
-   /* ← ADD - limits lines */
    -webkit-line-clamp: 3;
-   /* ← ADD - max 3 lines */
    -webkit-box-orient: vertical;
    overflow: hidden;
 }

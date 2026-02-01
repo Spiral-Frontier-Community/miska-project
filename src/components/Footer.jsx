@@ -8,12 +8,12 @@ const Footer = () => {
       {
          name: 'Facebook',
          url: 'https://www.facebook.com/MiskaThailand',
-         icon: <div className={styles.socialIcon} data-icon="facebook"></div>
+         icon: <img src="/logoApp/fb_colored_icon2.png" className={styles.socialIcon} alt="Miska logo" />
       },
       {
          name: 'Instagram',
          url: 'https://www.instagram.com/miska_thailand',
-         icon: <div className={styles.socialIcon} data-icon="instagram"></div>
+         icon: <img src="/logoApp/ig_colored_icon_2.png" className={styles.socialIcon} alt="Miska logo" />
       }
    ];
 

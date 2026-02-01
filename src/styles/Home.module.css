@@ -176,9 +176,7 @@
   line-height: 1.5;
   color: #555;
   padding: 0.2rem 0;
-  padding-left: 2rem;
-  position: relative;
-  text-align: justify;
+  text-align: left;
 }
 
 

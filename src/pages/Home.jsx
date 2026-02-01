@@ -62,7 +62,7 @@ const Home = ({ analytics, onProductClick, onScrollToProducts }) => {
       <KnowledgeSection />
 
       {/* Vision & Mission Section - Side by Side */}
-      <section className={styles.visionSection}>
+      <section id="about" className={styles.visionSection}>
         <div className={styles.visionContainer}>
           <div className={styles.visionCard}>
             <h3 className={styles.visionTitle}>วิสัยทัศน์</h3>
