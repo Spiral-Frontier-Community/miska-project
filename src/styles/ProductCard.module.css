@@ -67,6 +67,27 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+  .productsGrid {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .smallCard,
+  .largeCard {
+    width: 300px;
+    height: 300px;
+    flex-shrink: 0;
+  }
+
+  .largeCard {
+    height: 300px;
+  }
+}
+
 @media (max-width: 768px) {
   .productsGrid {
     grid-template-columns: 1fr;
