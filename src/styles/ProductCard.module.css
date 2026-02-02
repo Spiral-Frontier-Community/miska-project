@@ -70,21 +70,20 @@
 @media (max-width: 1024px) {
   .productsGrid {
     display: flex;
-    flex-direction: row;
-    gap: 15px;
-    justify-content: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
   }
 
   .smallCard,
   .largeCard {
-    width: 300px;
-    height: 300px;
-    flex-shrink: 0;
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
   }
 
   .largeCard {
-    height: 300px;
+    height: 500px;
   }
 }
 
