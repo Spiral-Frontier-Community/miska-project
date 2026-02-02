@@ -73,56 +73,47 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
+    padding: 0 20px;
   }
 
   .smallCard,
   .largeCard {
     width: 100%;
-    max-width: 700px;
-    height: 45vh;
+    max-width: 600px;
+    height: 400px;
+    grid-column: unset;
+    grid-row: unset;
+    border-radius: 20px;
   }
 
   .largeCard {
     height: 500px;
   }
-}
-
-@media (max-width: 768px) {
-  .productsGrid {
-    grid-template-columns: 1fr;
-    /* ← Single column */
-    grid-template-rows: auto auto auto;
-    /* ← 3 rows stacked */
-    gap: 15px;
-  }
-
-  .smallCard,
-  .largeCard {
-    width: 100%;
-    height: 300px;
-    grid-column: 1;
-    /* ← All in column 1 */
-  }
-
-  .largeCard {
-    grid-row: 1;
-    /* ← Large card on top */
-    height: 400px;
-    /* ← Taller */
-  }
-
-  .smallCard:nth-of-type(2) {
-    grid-row: 2;
-    /* ← Second item */
-  }
-
-  .smallCard:nth-of-type(3) {
-    grid-row: 3;
-    /* ← Third item */
-  }
 
   .imageContainer {
+    width: 100%;
     height: 100%;
-    padding: 0;
+    border-radius: 20px;
+  }
+
+  .productImage {
+    object-fit: contain;
+    padding: 20px;
+    border-radius: 20px;
   }
 }
+
+/* Desktop only - 1024px+ */
+@media (min-width: 1025px) {
+  .productsGrid {
+    display: grid;
+    grid-template-columns: 500px 500px;
+    grid-template-rows: 300px 300px;
+    gap: 20px;
+    justify-content: center;
+  }
+}
+
+
+
+
