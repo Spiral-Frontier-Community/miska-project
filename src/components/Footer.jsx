@@ -13,17 +13,17 @@ const Footer = () => {
       {
          name: 'Instagram',
          url: 'https://www.instagram.com/miska_thailand',
-         icon: <img src="/logoApp/ig_colored_icon_2.png" className={styles.socialIcon} alt="Miska logo" />
+         icon: <img src="/logoApp/ig_colored_icon.png" className={styles.socialIcon} alt="Miska logo" />
       }
    ];
- 
+
    return (
       <footer id="footer" className={styles.footer}>
          <div className={styles.container}>
             {/* Company Info */}
             <div className={styles.section}>
                <h4 className={styles.sectionTitle}>บริษัท มาย ทู มิส เวลแคร์ จำกัด</h4>
-               
+
             </div>
 
             {/* Contact Info */}
