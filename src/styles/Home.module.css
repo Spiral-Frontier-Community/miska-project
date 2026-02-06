@@ -214,7 +214,7 @@
 
   .visionContainer {
     grid-template-columns: 1fr;
-    max-width: 60vw;
+    max-width: 75vw;
   }
 
   .visionCard:nth-child(2) {
