@@ -125,11 +125,12 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
-  gap: clamp(1rem, 2vw, 1rem);
-  padding: 0 max(5%, calc((100% - 1600px) / 2));
-  max-width: 1600px;
+  gap: 2rem;
+  max-width: 60vw;
   margin: 0 auto;
+  padding: 0 1.5rem;
 }
+
 
 .visionCard:nth-child(2) {
   grid-column: 2;
@@ -142,14 +143,14 @@
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 123, 255, 0.1);
   transition: all 0.3s ease;
+  width: 28vw;
+  margin: 0 auto;
 }
 
 .visionCard:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 30px rgba(0, 123, 255, 0.15);
 }
-
-/* NO ICON - Removed */
 
 .visionTitle {
   font-size: clamp(1.5rem, 3vw, 2rem);
@@ -161,6 +162,7 @@
 .visionText {
   font-size: clamp(1rem, 1.8vw, 1.1rem);
   line-height: 1.8;
+  color: #555;
   color: #555;
   text-align: justify;
 }
@@ -195,7 +197,14 @@
 
   .visionContainer {
     grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
   }
+
+  .visionCard {
+    width: 100%;
+    max-width: 40vw;
+  }
+
 }
 
 @media (max-width: 768px) {
@@ -205,11 +214,17 @@
 
   .visionContainer {
     grid-template-columns: 1fr;
+    max-width: 60vw;
   }
 
   .visionCard:nth-child(2) {
     grid-column: auto;
     grid-row: auto;
+  }
+
+  .visionCard {
+    width: 100%;
+    max-width: 100%;
   }
 
   .singleProductSection {

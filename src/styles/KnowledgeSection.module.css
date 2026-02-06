@@ -98,7 +98,7 @@
 .gridContainer {
    position: relative;
    width: 100%;
-   
+
 }
 
 .gridContainer::before {
@@ -112,7 +112,7 @@
    backdrop-filter: blur(5px);
    z-index: 2;
    pointer-events: none;
-   display: var(--show-shadows, block); 
+   display: var(--show-shadows, block);
 }
 
 .gridContainer::after {
@@ -126,17 +126,18 @@
    backdrop-filter: blur(5px);
    z-index: 2;
    pointer-events: none;
-   display: var(--show-shadows, block); 
+   display: var(--show-shadows, block);
 }
 
 .gridContainer::before,
 .gridContainer::after {
-   display: none; /* ← ADD - hides shadows when few items */
+   display: none;
+   /* ← ADD - hides shadows when few items */
 }
 
 /* Show shadows only when scrollable */
-.knowledgeGrid:not(.noScroll) ~ .gridContainer::before,
-.knowledgeGrid:not(.noScroll) ~ .gridContainer::after {
+.knowledgeGrid:not(.noScroll)~.gridContainer::before,
+.knowledgeGrid:not(.noScroll)~.gridContainer::after {
    display: block;
 }
 
@@ -150,7 +151,10 @@
    display: flex;
    flex-direction: column;
    min-height: 300px;
-   min-width: 340px;
+   min-height: 300px;
+   min-width: 280px;
+   width: 20vw;
+   max-width: 90vw;
    scroll-snap-align: center;
    scroll-snap-stop: always;
 }
@@ -173,7 +177,8 @@
 .imageSrc {
    width: 100%;
    height: 100%;
-   object-fit: cover; /* ← Fills container, crops if needed */
+   object-fit: cover;
+   /* ← Fills container, crops if needed */
    display: block;
 }
 
@@ -295,13 +300,25 @@
 }
 
 @keyframes fadeIn {
-   from { opacity: 0; }
-   to { opacity: 1; }
+   from {
+      opacity: 0;
+   }
+
+   to {
+      opacity: 1;
+   }
 }
 
 @keyframes slideUp {
-   from { transform: translateY(50px); opacity: 0; }
-   to { transform: translateY(0); opacity: 1; }
+   from {
+      transform: translateY(50px);
+      opacity: 0;
+   }
+
+   to {
+      transform: translateY(0);
+      opacity: 1;
+   }
 }
 
 /* Responsive Design */
